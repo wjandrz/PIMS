@@ -11,6 +11,8 @@ public class POLine {
 	
 		@Id
 		@Column(name="LINE_NUMBER")
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
+		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
 	private int lineNumber;
 		@Column(name="UNIT_PRICE")
 	private double unitPrice;

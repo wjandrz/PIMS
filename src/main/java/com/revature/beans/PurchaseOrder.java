@@ -10,6 +10,8 @@ public class PurchaseOrder {
 	
 		@Id
 		@Column(name="ORDER_NUMBER")
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="purchaseOrderSeq")
+		@SequenceGenerator(name="purchaseOrderSeq", sequenceName="PURCHASE_ORDER_SEQ",initialValue=1, allocationSize=1)
 	private int orderNumber;
 		@Column(name="SUBTOTAL")
 	private double subtotal;
