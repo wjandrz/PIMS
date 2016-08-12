@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="IMS_PRODUCT_CATEGORY")
-public class productCategory {
+public class ProductCategory {
 	
 	@Id
 	@Column(name="CATEGORY_ID")
@@ -30,13 +30,13 @@ public class productCategory {
 		this.categoryDescription = categoryDescription;
 	}
 
-	public productCategory(int categoryId, String categoryDescription) {
+	public ProductCategory(int categoryId, String categoryDescription) {
 		super();
 		this.categoryId = categoryId;
 		this.categoryDescription = categoryDescription;
 	}
 
-	public productCategory() {
+	public ProductCategory() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
