@@ -15,4 +15,32 @@ public class StateAbbrv {
 	private String stateName;
 	@Column(name="STATE_ABBRV")
 	private String stateAbbrv;
+	
+	public int getAbbrvId() {
+		return abbrvId;
+	}
+	public void setAbbrvId(int abbrvId) {
+		this.abbrvId = abbrvId;
+	}
+	public String getStateName() {
+		return stateName;
+	}
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
+	}
+	public String getStateAbbrv() {
+		return stateAbbrv;
+	}
+	public void setStateAbbrv(String stateAbbrv) {
+		this.stateAbbrv = stateAbbrv;
+	}
+	public StateAbbrv(int abbrvId, String stateName, String stateAbbrv) {
+		super();
+		this.abbrvId = abbrvId;
+		this.stateName = stateName;
+		this.stateAbbrv = stateAbbrv;
+	}
+	public StateAbbrv() {
+		super();
+	}
 }

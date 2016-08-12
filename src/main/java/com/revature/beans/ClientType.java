@@ -17,6 +17,27 @@ public class ClientType {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="d")
 	@SequenceGenerator(name="d", sequenceName="CLIENT_TYPE_SEQ",initialValue=1, allocationSize=1)
 	private int clientTypeId;
+	
 	@Column(name="CLIENT_TYPE")
 	private String clientType;
+	public int getClientTypeId() {
+		return clientTypeId;
+	}
+	public void setClientTypeId(int clientTypeId) {
+		this.clientTypeId = clientTypeId;
+	}
+	public String getClientType() {
+		return clientType;
+	}
+	public void setClientType(String clientType) {
+		this.clientType = clientType;
+	}
+	public ClientType(int clientTypeId, String clientType) {
+		super();
+		this.clientTypeId = clientTypeId;
+		this.clientType = clientType;
+	}
+	public ClientType() {
+		super();
+	}
 }
