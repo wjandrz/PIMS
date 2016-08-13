@@ -12,14 +12,15 @@ import javax.persistence.Table;
 @Table(name="IMS_CLIENT_TYPE")
 public class ClientType {
 
-	@Id
-	@Column(name="CLIENT_TYPE_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientTypeSeq")
-	@SequenceGenerator(name="clientTypeSeq", sequenceName="CLIENT_TYPE_SEQ",initialValue=1, allocationSize=1)
+		@Id
+		@Column(name="CLIENT_TYPE_ID",unique=true, nullable=false)
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientTypeSeq")
+		@SequenceGenerator(name="clientTypeSeq", sequenceName="CLIENT_TYPE_SEQ",initialValue=1, allocationSize=1)
 	private int clientTypeId;
 	
-	@Column(name="CLIENT_TYPE")
+		@Column(name="CLIENT_TYPE", nullable=false)
 	private String clientType;
+	
 	public int getClientTypeId() {
 		return clientTypeId;
 	}

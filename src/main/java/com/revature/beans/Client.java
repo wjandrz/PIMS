@@ -7,23 +7,25 @@ import javax.persistence.*;
 public class Client {
 
 		@Id
-		@Column(name="IMS_CLIENT_ID")
+		@Column(name="IMS_CLIENT_ID",unique=true, nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientSeq")
 		@SequenceGenerator(name="clientSeq", sequenceName="CLIENT_SEQ",initialValue=1, allocationSize=1)
 	private int clientId;
-		@Column(name="CLIENT_NAME")
+		@Column(name="CLIENT_NAME", nullable=false)
 	private String clientName;
-		@Column(name="CLIENT_EMAIL")
+		@Column(name="CLIENT_EMAIL", nullable=false)
 	private String clientemail;
-		@Column(name="POINT_OF_CONTACT_NAME")
+		@Column(name="POINT_OF_CONTACT_NAME", nullable=false)
 	private String pointOfContactName;
-		@Column(name="CLIENT_PHONE")
+		@Column(name="CLIENT_PHONE", nullable=false)
 	private String clientPhone;
-		@Column(name="CLIENT_FAX")
+		@Column(name="CLIENT_FAX", nullable=false)
 	private String clientFax;
-		@Column(name="ADDRESS_ID")
+		@OneToOne
+		@JoinColumn(name="ADDRESS_ID", unique=true, nullable=false)
 	private Address addressId;
-		@Column(name="CLIENT_TYPE_ID")
+		@ManyToOne
+		@JoinColumn(name="CLIENT_TYPE_ID", nullable=false)
 	private ClientType clientTypeId;
 	
 	public int getClientId() {

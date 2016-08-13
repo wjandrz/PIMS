@@ -7,20 +7,20 @@ import javax.persistence.*;
 public class Address {
 
 		@Id
-		@Column(name="IMS_ADDRESS_ID")
+		@Column(name="IMS_ADDRESS_ID", unique=true, nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="addSeq")
 		@SequenceGenerator(name="addSeq", sequenceName="ADDRESS_SEQ",initialValue=1, allocationSize=1)
 	private int addressId;
-		@Column(name="STREET_ADDRESS_1")
+		@Column(name="STREET_ADDRESS_1", nullable=false)
 	private String streetAddress1;
-		@Column(name="STREET_ADDRESS_2")
+		@Column(name="STREET_ADDRESS_2", nullable=false)
 	private String streetAddress2;
-		@Column(name="ADDRESS_CITY")
+		@Column(name="ADDRESS_CITY", nullable=false)
 	private String addressCity;
 		@ManyToOne
-		@JoinColumn(name="STATE_ID")
+		@JoinColumn(name="STATE_ID", nullable=false)
 	private StateAbbrv stateId;
-		@Column(name="ADDRESS_ZIP")
+		@Column(name="ADDRESS_ZIP", nullable=false)
 	private String addressZip;
 	
 	public int getAddressId() {

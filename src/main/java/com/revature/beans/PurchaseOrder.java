@@ -9,19 +9,20 @@ import javax.persistence.*;
 public class PurchaseOrder {
 	
 		@Id
-		@Column(name="ORDER_NUMBER")
+		@Column(name="ORDER_NUMBER",unique=true, nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="purchaseOrderSeq")
 		@SequenceGenerator(name="purchaseOrderSeq", sequenceName="PURCHASE_ORDER_SEQ",initialValue=1, allocationSize=1)
 	private int orderNumber;
-		@Column(name="SUBTOTAL")
+		@Column(name="SUBTOTAL", nullable=false)
 	private double subtotal;
-		@Column(name="PURCHASE_DATE")
+		@Column(name="PURCHASE_DATE", nullable=false)
 	private Date purchaseDate;
-		@Column(name="TAX_AMOUNT")
+		@Column(name="TAX_AMOUNT", nullable=false)
 	private double taxAmount;
-		@Column(name="PO_TOTAL")
+		@Column(name="PO_TOTAL", nullable=false)
 	private double poTotal;
-		@Column(name="CLIENT_ID")
+		@ManyToOne
+		@JoinColumn(name="CLIENT_ID", nullable=false)
 	private Client clientId;
 		
 	

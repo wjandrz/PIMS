@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class StateAbbrv {
 
 		@Id
-		@Column(name="ABBRV_ID")
+		@Column(name="ABBRV_ID", unique=true, nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="stAbbrvSeq")
 		@SequenceGenerator(name="stAbbrvSeq", sequenceName="STATE_ABBRV_SEQ",initialValue=1, allocationSize=1)
 	private int abbrvId;
 	
-		@Column(name="STATE_NAME")
+		@Column(name="STATE_NAME", nullable=false)
 	private String stateName;
-		@Column(name="STATE_ABBRV")
+		@Column(name="STATE_ABBRV", nullable=false)
 	private String stateAbbrv;
 	
 	public int getAbbrvId() {

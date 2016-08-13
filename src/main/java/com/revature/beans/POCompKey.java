@@ -11,12 +11,14 @@ import javax.persistence.SequenceGenerator;
 @Embeddable
 public class POCompKey implements Serializable{
 
-	@Column(name = "ORDER_NUMBER")
+	private static final long serialVersionUID = 1L;
+
+		@Column(name = "ORDER_NUMBER", nullable=false)
 	private PurchaseOrder orderNumber;
 
-	@Column(name = "LINE_NUMBER")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
-	@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
+		@Column(name = "LINE_NUMBER", nullable=false)
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
+		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
 	private String lineNumber;
 
 	public PurchaseOrder getOrderNumber() {

@@ -8,19 +8,20 @@ public class POLine {
 	
 		@EmbeddedId
 	private POCompKey compKey;
-		@Column(name="UNIT_PRICE")
+		@Column(name="UNIT_PRICE", nullable=false)
 	private double unitPrice;
-		@Column(name="QUANTITY_ORDERED")
+		@Column(name="QUANTITY_ORDERED", nullable=false)
 	private int quantityOrdered;
-		@Column(name="PRODUCT_UPC")
+		@ManyToOne
+		@JoinColumn(name="PRODUCT_UPC", nullable=false)
 	private Product productUpc;
 		
 	public POCompKey getCompKey() {
 			return compKey;
 		}
-		public void setCompKey(POCompKey compKey) {
-			this.compKey = compKey;
-		}
+	public void setCompKey(POCompKey compKey) {
+		this.compKey = compKey;
+	}
 	public double getUnitPrice() {
 		return unitPrice;
 	}
