@@ -30,6 +30,7 @@
 		<mapping class="com.revature.beans.Client"/> 
 		<mapping class="com.revature.beans.ClientType"/>
 		<mapping class="com.revature.beans.POLine"/> 
+		<mapping class="com.revature.beans.POCompKey"/> 
 		<mapping class="com.revature.beans.Product"/>
 		<mapping class="com.revature.beans.ProductCategory"/>
 		<mapping class="com.revature.beans.PurchaseOrder"/>

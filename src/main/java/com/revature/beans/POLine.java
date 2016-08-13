@@ -6,14 +6,8 @@ import javax.persistence.*;
 @Table(name="IMS_PO_LINE")
 public class POLine {
 	
-		@Column(name="ORDER_NUMBER")
-	private PurchaseOrder orderNumber;
-	
-		@Id
-		@Column(name="LINE_NUMBER")
-		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
-		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
-	private int lineNumber;
+		@EmbeddedId
+	private POCompKey compKey;
 		@Column(name="UNIT_PRICE")
 	private double unitPrice;
 		@Column(name="QUANTITY_ORDERED")
@@ -21,19 +15,12 @@ public class POLine {
 		@Column(name="PRODUCT_UPC")
 	private Product productUpc;
 		
-	
-	public PurchaseOrder getOrderNumber() {
-		return orderNumber;
-	}
-	public void setOrderNumber(PurchaseOrder orderNumber) {
-		this.orderNumber = orderNumber;
-	}
-	public int getLineNumber() {
-		return lineNumber;
-	}
-	public void setLineNumber(int lineNumber) {
-		this.lineNumber = lineNumber;
-	}
+	public POCompKey getCompKey() {
+			return compKey;
+		}
+		public void setCompKey(POCompKey compKey) {
+			this.compKey = compKey;
+		}
 	public double getUnitPrice() {
 		return unitPrice;
 	}
@@ -52,11 +39,10 @@ public class POLine {
 	public void setProductUpc(Product productUpc) {
 		this.productUpc = productUpc;
 	}
-	public POLine(PurchaseOrder orderNumber, int lineNumber, double unitPrice, int quantityOrdered,
+	public POLine(POCompKey compKey, double unitPrice, int quantityOrdered,
 			Product productUpc) {
 		super();
-		this.orderNumber = orderNumber;
-		this.lineNumber = lineNumber;
+		this.compKey = compKey;
 		this.unitPrice = unitPrice;
 		this.quantityOrdered = quantityOrdered;
 		this.productUpc = productUpc;
