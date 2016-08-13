@@ -6,14 +6,15 @@ import javax.persistence.*;
 @Table(name="IMS_STATE_ABBRV")
 public class StateAbbrv {
 
-	@Id
-	@Column(name="ABBRV_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="stAbbrvSeq")
-	@SequenceGenerator(name="stAbbrvSeq", sequenceName="STATE_ABBRV_SEQ",initialValue=1, allocationSize=1)
+		@Id
+		@Column(name="ABBRV_ID")
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="stAbbrvSeq")
+		@SequenceGenerator(name="stAbbrvSeq", sequenceName="STATE_ABBRV_SEQ",initialValue=1, allocationSize=1)
 	private int abbrvId;
-	@Column(name="STATE_NAME")
+	
+		@Column(name="STATE_NAME")
 	private String stateName;
-	@Column(name="STATE_ABBRV")
+		@Column(name="STATE_ABBRV")
 	private String stateAbbrv;
 	
 	public int getAbbrvId() {
