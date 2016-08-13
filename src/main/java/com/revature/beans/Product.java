@@ -10,6 +10,8 @@ public class Product {
 	
 		@Id
 		@Column(name="PRODUCT_UPC")
+		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="productSeq")
+		@SequenceGenerator(name="productSeq", sequenceName="PRODUCT_SEQ",initialValue=1, allocationSize=1)
 	private int productUpc;
 		@Column(name="PRODUCT_NAME")
 	private String productName;

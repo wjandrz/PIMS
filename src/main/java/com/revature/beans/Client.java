@@ -8,8 +8,8 @@ public class Client {
 
 	@Id
 	@Column(name="IMS_CLIENT_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="c")
-	@SequenceGenerator(name="c", sequenceName="CLIENT_SEQ",initialValue=1, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientSeq")
+	@SequenceGenerator(name="clientSeq", sequenceName="CLIENT_SEQ",initialValue=1, allocationSize=1)
 	private int clientId;
 	@Column(name="CLIENT_NAME")
 	private String clientName;

@@ -8,8 +8,8 @@ public class Address {
 
 	@Id
 	@Column(name="IMS_ADDRESS_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="b")
-	@SequenceGenerator(name="b", sequenceName="ADDRESS_SEQ",initialValue=1, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="addSeq")
+	@SequenceGenerator(name="addSeq", sequenceName="ADDRESS_SEQ",initialValue=1, allocationSize=1)
 	private int addressId;
 	@Column(name="STREET_ADDRESS_1")
 	private String streetAddress1;

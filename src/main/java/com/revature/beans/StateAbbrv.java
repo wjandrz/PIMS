@@ -8,8 +8,8 @@ public class StateAbbrv {
 
 	@Id
 	@Column(name="ABBRV_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="a")
-	@SequenceGenerator(name="b", sequenceName="STATE_ABBRV_SEQ",initialValue=1, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="stAbbrvSeq")
+	@SequenceGenerator(name="stAbbrvSeq", sequenceName="STATE_ABBRV_SEQ",initialValue=1, allocationSize=1)
 	private int abbrvId;
 	@Column(name="STATE_NAME")
 	private String stateName;
