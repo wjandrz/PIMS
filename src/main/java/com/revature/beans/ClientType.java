@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class ClientType {
 
 		@Id
-		@Column(name="CLIENT_TYPE_ID",unique=true, nullable=false)
+		@Column(name="CLIENT_TYPE_ID", nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientTypeSeq")
 		@SequenceGenerator(name="clientTypeSeq", sequenceName="CLIENT_TYPE_SEQ",initialValue=1, allocationSize=1)
 	private int clientTypeId;

@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Product {
 	
 		@Id
-		@Column(name="PRODUCT_UPC",unique=true, nullable=false)
+		@Column(name="PRODUCT_UPC", nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="productSeq")
 		@SequenceGenerator(name="productSeq", sequenceName="PRODUCT_SEQ",initialValue=1, allocationSize=1)
 	private int productUpc;
