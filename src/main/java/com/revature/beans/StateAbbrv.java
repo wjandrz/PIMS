@@ -14,6 +14,7 @@ public class StateAbbrv {
 	
 		@Column(name="STATE_NAME", nullable=false)
 	private String stateName;
+		
 		@Column(name="STATE_ABBRV", nullable=false)
 	private String stateAbbrv;
 	
