@@ -18,7 +18,17 @@ public class POLine {
 		@ManyToOne
 		@JoinColumn(name="PRODUCT_UPC", nullable=false)
 	private Product productUpc;
+		@ManyToOne
+		@MapsId("orderNumber")
+	private PurchaseOrder order;
 		
+	
+	public PurchaseOrder getOrder() {
+			return order;
+		}
+		public void setOrder(PurchaseOrder order) {
+			this.order = order;
+		}
 	public POCompKey getCompKey() {
 			return compKey;
 		}

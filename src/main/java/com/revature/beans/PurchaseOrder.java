@@ -1,8 +1,18 @@
 package com.revature.beans;
 
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="IMS_PURCHASE_ORDER")
@@ -24,8 +34,9 @@ public class PurchaseOrder {
 		@ManyToOne
 		@JoinColumn(name="CLIENT_ID", nullable=false)
 	private Client clientId;
-		
-	
+		@OneToMany(mappedBy="compKey.orderNumber")
+	private Set<POLine> poLine;
+
 	public int getOrderNumber() {
 		return orderNumber;
 	}
