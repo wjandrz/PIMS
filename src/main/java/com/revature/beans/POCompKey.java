@@ -19,7 +19,7 @@ public class POCompKey implements Serializable{
 		@Column(name="LINE_NUMBER", nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
 		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
-	private String lineNumber;
+	private int lineNumber;
 
 	public PurchaseOrder getOrderNumber() {
 		return orderNumber;
@@ -29,15 +29,15 @@ public class POCompKey implements Serializable{
 		this.orderNumber = orderNumber;
 	}
 
-	public String getLineNumber() {
+	public int getLineNumber() {
 		return lineNumber;
 	}
 
-	public void setLineNumber(String lineNumber) {
+	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
 	}
 
-	public POCompKey(PurchaseOrder orderNumber, String lineNumber) {
+	public POCompKey(PurchaseOrder orderNumber, int lineNumber) {
 		super();
 		this.orderNumber = orderNumber;
 		this.lineNumber = lineNumber;
