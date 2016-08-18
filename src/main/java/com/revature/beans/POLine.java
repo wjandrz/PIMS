@@ -8,9 +8,6 @@ public class POLine {
 	
 		@EmbeddedId
 	private POCompKey compKey;
-		@ManyToOne
-	    @MapsId("orderNumber")
-	    private PurchaseOrder orderNumber;
 		@Column(name="UNIT_PRICE", nullable=false)
 	private double unitPrice;
 		@Column(name="QUANTITY_ORDERED", nullable=false)
