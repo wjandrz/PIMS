@@ -19,6 +19,7 @@ public class POCompKey implements Serializable{
 		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
 	private Integer lineNumber;
 
+
 	public PurchaseOrder getOrderNumber() {
 		return orderNumber;
 	}
