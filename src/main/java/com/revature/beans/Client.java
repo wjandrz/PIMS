@@ -7,14 +7,14 @@ import javax.persistence.*;
 public class Client {
 
 		@Id
-		@Column(name="IMS_CLIENT_ID",unique=true, nullable=false)
+		@Column(name="IMS_CLIENT_ID", nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="clientSeq")
 		@SequenceGenerator(name="clientSeq", sequenceName="CLIENT_SEQ",initialValue=1, allocationSize=1)
 	private int clientId;
 		@Column(name="CLIENT_NAME", nullable=false)
 	private String clientName;
 		@Column(name="CLIENT_EMAIL", nullable=false)
-	private String clientemail;
+	private String clientEmail;
 		@Column(name="POINT_OF_CONTACT_NAME", nullable=false)
 	private String pointOfContactName;
 		@Column(name="CLIENT_PHONE", nullable=false)
@@ -40,11 +40,11 @@ public class Client {
 	public void setClientName(String clientName) {
 		this.clientName = clientName;
 	}
-	public String getClientemail() {
-		return clientemail;
+	public String getClientEmail() {
+		return clientEmail;
 	}
 	public void setClientemail(String clientemail) {
-		this.clientemail = clientemail;
+		this.clientEmail = clientemail;
 	}
 	public String getPointOfContactName() {
 		return pointOfContactName;
@@ -76,12 +76,12 @@ public class Client {
 	public void setClientTypeId(ClientType clientTypeId) {
 		this.clientTypeId = clientTypeId;
 	}
-	public Client(int clientId, String clientName, String clientemail, String pointOfContactName, String clientPhone,
+	public Client(int clientId, String clientName, String clientEmail, String pointOfContactName, String clientPhone,
 			String clientFax, Address addressId, ClientType clientTypeId) {
 		super();
 		this.clientId = clientId;
 		this.clientName = clientName;
-		this.clientemail = clientemail;
+		this.clientEmail = clientEmail;
 		this.pointOfContactName = pointOfContactName;
 		this.clientPhone = clientPhone;
 		this.clientFax = clientFax;

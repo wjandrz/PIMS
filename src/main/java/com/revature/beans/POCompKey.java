@@ -2,24 +2,23 @@ package com.revature.beans;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
+import com.revature.beans.PurchaseOrder;
 
 @Embeddable
 public class POCompKey implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
-		@Column(name="ORDER_NUMBER", nullable=false)
+		
+		@ManyToOne
+		@JoinColumn(name="ORDER_NUMBER", nullable=false)
 	private PurchaseOrder orderNumber;
 
 		@Column(name="LINE_NUMBER", nullable=false)
 		@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="poLineSeq")
 		@SequenceGenerator(name="poLineSeq", sequenceName="PO_LINE_SEQ",initialValue=1, allocationSize=1)
-	private int lineNumber;
+	private Integer lineNumber;
+
 
 	public PurchaseOrder getOrderNumber() {
 		return orderNumber;
@@ -29,7 +28,7 @@ public class POCompKey implements Serializable{
 		this.orderNumber = orderNumber;
 	}
 
-	public int getLineNumber() {
+	public Integer getLineNumber() {
 		return lineNumber;
 	}
 
@@ -37,7 +36,7 @@ public class POCompKey implements Serializable{
 		this.lineNumber = lineNumber;
 	}
 
-	public POCompKey(PurchaseOrder orderNumber, int lineNumber) {
+	public POCompKey(PurchaseOrder orderNumber, Integer lineNumber) {
 		super();
 		this.orderNumber = orderNumber;
 		this.lineNumber = lineNumber;
