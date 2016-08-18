@@ -21,24 +21,29 @@
 	<div class="container theme-showcase" role="main">
 		<form action="" method="post">
 			<h2>New Client</h2>
-			<input type="text" placeholder="Name"> <br />
-			<input type="text" placeholder="Email"> <br />
-			<input type="text" placeholder="Point of Contact Name"> <br />
-			<input type="text" placeholder="Phone Number"> <br />
-			<input type="text" placeholder="Fax"> <br />
-			<input type="text" placeholder="Street Address 1"> <br />
-			<input type="text" placeholder="Street Address 2"> <br />
-			<input type="text" placeholder="City"> <br />
-			<input type="text" placeholder="State"> <br />
-			<input type="text" placeholder="ZIP"> <br />
-			<select>
+			<input type="text" placeholder="Name" required="true"> <br />
+			<input type="text" placeholder="Email" required="true"> <br />
+			<input type="text" placeholder="Point of Contact Name" required="true"> <br />
+			<input type="text" placeholder="Phone Number" required="true"> <br />
+			<input type="text" placeholder="Fax" required="true"> <br />
+			<input type="text" placeholder="Street Address 1" required="true"> <br />
+			<input type="text" placeholder="Street Address 2" required="true"> <br />
+			<input type="text" placeholder="City" required="true"> <br />
+			<input type="text" placeholder="State" required="true"> <br />
+			<input type="text" placeholder="ZIP" required="true"> <br />
+			<select required="true">
 				<option value="1">incoming</option>
 				<option value="2">outgoing</option>
 			</select>
 			<button type="submit" class="btn btn-xs btn-success">Add</button>
 		</form>
+		<h2>Remove a Client</h2>
 		<form action="" method="post">
-			
+			<select required="true">
+				<option value="1">incoming</option>
+				<option value="2">outgoing</option>
+			</select>
+			<button type="submit" class="btn btn-xs btn-success">Remove</button>
 		</form>
 	</div>
 </body>

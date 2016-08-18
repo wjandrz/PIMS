@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%> -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,12 +20,25 @@
 <body>
 	<div class="container theme-showcase" role="main">
 		<form action="" method="post">
-			<input type="text" placeholder="New Client">
+			<h2>New Client</h2>
+			<input type="text" placeholder="Name" required="true"> <br />
+			<input type="text" placeholder="Email" required="true"> <br />
+			<input type="text" placeholder="Point of Contact Name" required="true"> <br />
+			<input type="text" placeholder="Phone Number" required="true"> <br />
+			<input type="text" placeholder="Fax" required="true"> <br />
+			<input type="text" placeholder="Street Address 1" required="true"> <br />
+			<input type="text" placeholder="Street Address 2" required="true"> <br />
+			<input type="text" placeholder="City" required="true"> <br />
+			<input type="text" placeholder="State" required="true"> <br />
+			<input type="text" placeholder="ZIP" required="true"> <br />
 			<select>
 				<option value="1">incoming</option>
 				<option value="2">outgoing</option>
 			</select>
-			<button type="submit" class="btn btn-lg btn-success">Log in</button>
+			<button type="submit" class="btn btn-xs btn-success">Add</button>
+		</form>
+		<form action="" method="post">
+			
 		</form>
 	</div>
 </body>
